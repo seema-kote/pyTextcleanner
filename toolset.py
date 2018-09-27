@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 """
 Created on Sat Sep 15 03:31:51 2018
 @author: Seema Kote
@@ -26,7 +26,7 @@ class TextCleaner:
         return BeautifulSoup(tweet, "lxml").text
     
     def remove_stopwords(self, tweet):
-		"""
+	"""
         Remove stopwords from tweet
         Input: tweet text
         Output: tweet with removed stopwords
@@ -34,7 +34,7 @@ class TextCleaner:
         return " ".join([word for word in tweet.split(" ") if word not in self.cachedStopWords])
     
     def filter_pattern(self, pattern, tweet, replacer = "''"):
-		"""
+	"""
         Filter pattern from tweet
         Input: pattern, tweet text, replace pattern
         Output: tweet with filter pattern
@@ -43,7 +43,7 @@ class TextCleaner:
         return pattern.sub(replacer, tweet)
         
     def remove_puctuations(self, tweet):
-		"""
+	"""
         Remove punctuations from tweet
         Input: tweet text
         Output: tweet with remove punctuations
@@ -52,7 +52,7 @@ class TextCleaner:
         return " ".join(tokenizer.tokenize(tweet))
     
     def lemmetize(self, tweet):
-		"""
+	"""
         Lemmetize words from tweet
         Input: tweet text
         Output: tweet with lemmetizing words
@@ -61,7 +61,7 @@ class TextCleaner:
         return " ".join([lmtzr.lemmatize(word) for word in tweet.split()])
     
     def clean_tweet(self,train_dataset):
-		"""
+	"""
         Clean tweet from dataset
         Input: dataset
         Output: tweets with  cleaned data
@@ -82,7 +82,7 @@ class TextCleaner:
         return cleaned_tweets
     
     def calculate_tf_idf(self, cleaned_tweets):
-		"""
+	"""
         calculate Term frequency and inverse document frequency
         Input: dataset
         Output: tweets with calulating tf-idf
@@ -92,7 +92,7 @@ class TextCleaner:
         return vectorizer
     
     def get_sentiment(self,tweet):
-		"""
+	"""
         obtain all sentiments to dataset
         Input: dataset
         Output: tweets with sentiment score
